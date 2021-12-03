@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Note;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
     public function index() {
-        return view('notes.index');
+        $notes = Note::all();
+        return view('notes.index')->with('notes', $notes);
     }
 }

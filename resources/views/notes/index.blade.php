@@ -9,6 +9,11 @@
 <body>
 
 <h1>Simple Notes</h1>
+<ul>
+    @foreach($notes as $note)
+        <li>{{ $note->title }}</li>
+    @endforeach
+</ul>
 
 </body>
 </html>
