@@ -24,10 +24,13 @@
                         {{ $note->description }}
                     </div>
 
-                    <form action="">
+                    <form action="/notes/{{ $note->id }}/destroy" method="post">
+                        @method('DELETE')
+                        @csrf
                         <a href="/notes/{{ $note->id }}/edit" class="btn btn-primary btn-sm">Edit</a>
-                        <button class="btn btn-danger btn-sm">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
+
                 </div>
             </div>
 
