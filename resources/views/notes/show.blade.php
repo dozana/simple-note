@@ -51,20 +51,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($notes as $note)
                             <tr>
                                 <td>{{ $note->title }}</td>
                                 <td class="text-center">{{ $note->completed }}</td>
                                 <td>{{ $note->created_at }}</td>
                                 <td class="text-center">
-                                    <a href="/notes/{{ $note->id }}" class="btn btn-primary btn-sm">View</a>
+                                    <form action="">
+                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
-                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <a href="/notes" class="btn btn-outline-dark btn-sm">Go Back</a>
 
         </div>
     </div>

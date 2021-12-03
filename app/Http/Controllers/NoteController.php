@@ -11,4 +11,9 @@ class NoteController extends Controller
         $notes = Note::all();
         return view('notes.index')->with('notes', $notes);
     }
+
+    public function show($todoId) {
+        $note = Note::find($todoId);
+        return view('notes.show')->with('note', $note);
+    }
 }
