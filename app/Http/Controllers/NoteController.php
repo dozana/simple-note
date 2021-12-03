@@ -13,9 +13,8 @@ class NoteController extends Controller
         return view('notes.index')->with('notes', $notes);
     }
 
-    public function show($noteId)
+    public function show(Note $note)
     {
-        $note = Note::find($noteId);
         return view('notes.show')->with('note', $note);
     }
 
@@ -42,14 +41,12 @@ class NoteController extends Controller
         return redirect('/notes');
     }
 
-    public function edit($noteId)
+    public function edit(Note $note)
     {
-        $note = Note::find($noteId);
-
         return view('notes.edit')->with('note', $note);
     }
 
-    public function update($noteId)
+    public function update(Note $note)
     {
         $this->validate(\request(), [
             'title' => 'required|min:6',
@@ -58,7 +55,6 @@ class NoteController extends Controller
 
         $data = \request()->all();
 
-        $note = Note::find($noteId);
         $note->title = $data['title'];
         $note->description = $data['description'];
         $note->save();
@@ -66,9 +62,8 @@ class NoteController extends Controller
         return redirect('/notes');
     }
 
-    public function destroy($noteId)
+    public function destroy(Note $note)
     {
-        $note = Note::find($noteId);
         $note->delete();
 
         return redirect('/notes');
