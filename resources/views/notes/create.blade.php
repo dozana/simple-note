@@ -27,13 +27,6 @@
                             <label for="description" class="form-label">Description</label>
                             <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                         </div>
-                        <div class="mb-3">
-                            <label for="completed" class="form-label">Completed</label>
-                            <select name="completed" id="completed" class="form-select">
-                                <option value="0">No</option>
-                                <option value="1">Yes</option>
-                            </select>
-                        </div>
                         <button type="submit" class="btn btn-success btn-sm">Create</button>
                     </form>
                 </div>
