@@ -22,6 +22,12 @@ class NoteController extends Controller
     }
 
     public function store() {
+
+        $this->validate(\request(), [
+            'title' => 'required|min:6|max:12',
+            'description' => 'required',
+        ]);
+
         $data = \request()->all();
 
         $note = new Note();
