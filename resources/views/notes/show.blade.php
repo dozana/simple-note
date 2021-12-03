@@ -10,29 +10,24 @@
         <div class="col-lg-12 col-md-12">
 
             <div class="card mb-3">
-                <div class="card-body p-0">
-                    <table class="table table-hover mb-0">
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th class="text-center">Completed</th>
-                                <th>Created At</th>
-                                <th class="text-center">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{ $note->title }}</td>
-                                <td class="text-center">{{ $note->completed }}</td>
-                                <td>{{ $note->created_at }}</td>
-                                <td class="text-center">
-                                    <form action="">
-                                        <button class="btn btn-danger btn-sm">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card-header">
+                    {{ $note->title }}
+                </div>
+                <div class="card-body">
+
+                    <ul class="list-unstyled">
+                        <li>Date: {{ $note->created_at }}</li>
+                        <li>Completed: {{ $note->completed }}</li>
+                    </ul>
+
+                    <div class="mb-3">
+                        {{ $note->description }}
+                    </div>
+
+                    <form action="">
+                        <a href="/notes/{{ $note->id }}/edit" class="btn btn-primary btn-sm">Edit</a>
+                        <button class="btn btn-danger btn-sm">Delete</button>
+                    </form>
                 </div>
             </div>
 
