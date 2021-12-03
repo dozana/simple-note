@@ -19,3 +19,5 @@ Route::get('notes/{note}/edit', 'NoteController@edit');
 Route::post('notes/{note}/update-note', 'NoteController@update');
 
 Route::delete('notes/{note}/destroy', 'NoteController@destroy');
+
+Route::get('notes/{note}/complete', 'NoteController@complete');

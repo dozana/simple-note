@@ -26,6 +26,10 @@
                             <td class="text-center">{{ $note->completed }}</td>
                             <td>{{ $note->created_at }}</td>
                             <td class="text-center">
+                                @if(!$note->completed)
+                                    <a href="/notes/{{ $note->id }}/complete" class="btn btn-warning btn-sm">Complete</a>
+                                @endif
+
                                 <a href="/notes/{{ $note->id }}" class="btn btn-primary btn-sm">View</a>
                             </td>
                         </tr>

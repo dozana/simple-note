@@ -74,4 +74,14 @@ class NoteController extends Controller
 
         return redirect('/notes');
     }
+
+    public function complete(Note $note)
+    {
+        $note->completed = true;
+        $note->save();
+
+        session()->flash('success', 'Note completed successfully.');
+
+        return redirect('/notes');
+    }
 }
