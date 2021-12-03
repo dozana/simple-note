@@ -10,6 +10,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/notes">Notes</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/new-note">New Note</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">

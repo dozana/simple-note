@@ -16,4 +16,20 @@ class NoteController extends Controller
         $note = Note::find($todoId);
         return view('notes.show')->with('note', $note);
     }
+
+    public function create() {
+        return view('notes.create');
+    }
+
+    public function store() {
+        $data = \request()->all();
+
+        $note = new Note();
+        $note->title = $data['title'];
+        $note->description = $data['description'];
+        $note->completed = $data['completed'];
+        $note->save();
+
+        return redirect('/notes');
+    }
 }
