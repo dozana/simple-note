@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/">Home</a>
+                    <a href="/notes">View</a>
                 </div>
             </div>
         </div>
